@@ -1,28 +1,12 @@
-Real Estate Price Prediction Project
+# Real Estate Housing Price Prediction Project
 
-This project implements a complete machine learning workflow to predict house prices per unit area using real estate transaction data. The objective is not only to build a predictive model, but also to understand how different factors influence property prices and to justify model selection through evaluation and visualization.
+## Overview
 
-Project Structure
-real-estate-price-prediction/
-│
-├── data/
-│   └── real_estate.csv
-│
-├── src/
-│   ├── data_preprocessing.py
-│   ├── model_training.py
-│   ├── model_evaluation.py
-│   └── visualization.py
-│
-├── results/
-│   └── plots/
-│
-├── README.md
-└── requirements.txt
+This project implements a machine learning solution to predict real estate house prices using linear regression and alternative regression models. The analysis provides insights into key factors influencing property values in real estate markets.
 
-Dataset Description
+## Dataset Description
 
-The dataset consists of real estate transactions with the following features:
+The dataset contains real estate transaction records with the following features:
 
 Transaction date
 
@@ -30,28 +14,23 @@ House age
 
 Distance to the nearest MRT station
 
-Number of nearby convenience stores
+Number of convenience stores
 
-Latitude and longitude
+Latitude
 
-The target variable is:
+Longitude
 
-House price per unit area
+The target variable is house price per unit area.
 
-Each row represents a single property transaction.
+## Methodology
 
-Methodology
-1. Data Preparation
+### Data Preparation
 
-All explanatory variables were grouped into a feature matrix X.
+All explanatory variables were grouped into a feature matrix X, while house price per unit area was used as the target variable y. The dataset was split into training and testing sets (80/20 split) for model evaluation.
 
-House price per unit area was selected as the target variable y.
+### Model Training
 
-The data was split into training and testing sets to ensure fair evaluation.
-
-2. Model Development
-
-Three regression models were implemented and compared:
+The following regression models were implemented and compared:
 
 Linear Regression
 
@@ -59,40 +38,39 @@ Ridge Regression
 
 Lasso Regression
 
-These models were chosen to evaluate whether regularization improves prediction performance.
+### Model Evaluation
 
-3. Model Evaluation
+Models were evaluated using the R² score as the primary performance metric. Linear Regression achieved the highest R² score, indicating superior predictive performance compared to Ridge and Lasso regression approaches.
 
-Models were evaluated using the R² score.
+### Visualization
 
-Performance comparison showed that Linear Regression achieved the highest R² score, indicating the best fit for this dataset.
+Comprehensive scatter plots were generated to visualize key relationships:
+- House age vs. price per unit area
+- Distance to nearest MRT station vs. price per unit area
+- Number of convenience stores vs. price per unit area
 
-4. Visualization
+Regression lines were fitted to each plot to highlight trends and relationships.
 
-A scatter plot was created to analyze the relationship between distance to the nearest MRT station and house price.
+## Results
 
-A regression line was added to visualize the trend and support model selection.
+Linear Regression emerged as the best-performing model among all tested approaches. Key findings include:
 
-Results
+- **Negative relationship with MRT distance**: Properties closer to MRT stations command higher prices
+- **Age impact**: Newer properties tend to have higher valuations
+- **Convenience store proximity**: Areas with more nearby convenience stores show higher property values
 
-Linear Regression outperformed Ridge and Lasso regression, suggesting that the dataset does not suffer significantly from overfitting or multicollinearity. The results indicate that a simple linear model is sufficient to capture the relationship between features and house price.
+The model demonstrates that location-based features (particularly proximity to MRT stations) are significant predictors of real estate prices in this market.
 
-The visualization confirms a negative relationship between distance to MRT stations and house prices—properties closer to MRT stations generally have higher value.
+## Technologies Used
 
-Technologies Used
+- Python
+- pandas
+- NumPy
+- scikit-learn
+- seaborn
+- matplotlib
+- Jupyter Notebook
 
-Python
+## Conclusion
 
-pandas
-
-NumPy
-
-scikit-learn
-
-seaborn
-
-matplotlib
-
-Conclusion
-
-This project demonstrates a structured and interpretable machine learning pipeline, covering data preparation, model comparison, evaluation, and visualization. The results highlight the importance of starting with simple models and validating assumptions through data-driven analysis.
+This project demonstrates a complete machine learning workflow for real estate price prediction, from data preparation through model training, evaluation, and visualization. The findings validate Linear Regression as an effective and interpretable model for this domain. The strong correlation between location factors (particularly MRT proximity) and property prices suggests that geographic features should be prioritized in real estate valuation strategies.
