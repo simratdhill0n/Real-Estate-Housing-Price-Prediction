@@ -8,12 +8,12 @@ This project implements a machine learning solution to predict real estate house
 
 The dataset contains real estate transaction records with the following features:
 
--Transaction date
--House age
--Distance to the nearest MRT station
--Number of convenience stores
--Latitude
--Longitude
+- Transaction date
+- House age
+- Distance to the nearest MRT station
+- Number of convenience stores
+- Latitude
+- Longitude
 
 The target variable is house price per unit area.
 
@@ -27,9 +27,9 @@ All explanatory variables were grouped into a feature matrix X, while house pric
 
 The following regression models were implemented and compared:
 
--Linear Regression
--Ridge Regression
--Lasso Regression
+- Linear Regression
+- Ridge Regression
+- Lasso Regression
 
 ### Model Evaluation
 
